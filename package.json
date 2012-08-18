@@ -1,6 +1,6 @@
 {
   "author": "Gui Lin <guileen AT gmail DOT com>",
-  "name": "mailbox",
+  "name": "smtpd",
   "description": "a very simple SMTP server",
   "version": "0.1.0",
   "repository": {

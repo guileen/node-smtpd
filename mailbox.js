@@ -152,12 +152,16 @@ function connectionListener (options, sock) {
         break;
       case 'MAIL':
         var match = args.match(/FROM:<(.*)>/);
-        mail_from = match[1];
+        if(match){
+          mail_from = match[1];
+        }
         w('250 OK');
         break;
       case 'RCPT':
         var match = args.match(/TO:<(.*)>/);
-        rcpt_to = match[1];
+        if(match) {
+          rcpt_to = match[1];
+        }
         w('250 OK')
         break;
       case 'DATA':
