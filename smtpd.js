@@ -97,6 +97,7 @@ function connectionListener (options, sock) {
       if(line == '.') {
         data_step = 0
         mailparser.end();
+        w('250 OK');
       } else {
         data_txt += (line + CRLF);
         mailparser.write(line + CRLF);
@@ -151,14 +152,14 @@ function connectionListener (options, sock) {
         w('250 OK');
         break;
       case 'MAIL':
-        var match = args.match(/FROM:<(.*)>/);
+        var match = args.match(/FROM *:? *<(.*)>/);
         if(match){
           mail_from = match[1];
         }
         w('250 OK');
         break;
       case 'RCPT':
-        var match = args.match(/TO:<(.*)>/);
+        var match = args.match(/TO *:? *<(.*)>/);
         if(match) {
           rcpt_to = match[1];
         }
