@@ -9,7 +9,7 @@ var sendmail = require('sendmail')({
       error: cclog.error
     }
 });
-var box = require('../mailbox')({
+var box = require('../smtpd')({
     logger: cclog
 });
 
@@ -22,7 +22,10 @@ box.on('msg', function(from, to, msg, body) {
 });
 
 box.on('error', function(err, mail) {
-
+    if(err){
+      cclog.error(err);
+    }
+    cclog.log(mail)
 });
 
 box.listen(25, function() {
