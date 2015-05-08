@@ -2,7 +2,7 @@
   "author": "Gui Lin <guileen AT gmail DOT com>",
   "name": "smtpd",
   "description": "a very simple SMTP server",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "repository": {
     "type": "git",
     "url": "git://github.com/guileen/node-smtpd.git"
