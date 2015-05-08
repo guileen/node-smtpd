@@ -26,3 +26,7 @@ box.listen(25, function() {
     testSend();
 });
 ```
+
+## Similar project
+[smtpd-lite](https://github.com/g6123/node-smtpd-lite)
+
